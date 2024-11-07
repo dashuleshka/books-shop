@@ -1,0 +1,55 @@
+/* YourOrdersPage.css */
+.orders-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .order-card {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .order-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-card img {
+    max-width: 100px;
+    margin-right: 20px;
+    border-radius: 4px;
+  }
+  
+  .order-card h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  .order-card p {
+    margin: 5px 0 0;
+    color: #777;
+  }
+  
+  @media (max-width: 768px) {
+    .order-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .order-card img {
+      margin-bottom: 10px;
+    }
+  }

@@ -1,0 +1,168 @@
+.banner {
+  height: 494px;
+  display: flex;
+  gap: 123px;
+  padding: 100px 80px;
+  background-color: #c8dbf4;
+  border-radius: 8px;
+}
+
+.banner__main-title {
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.banner__description-title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.banner__picture {
+  width: 565px;
+  height: 338px;
+}
+
+.banner__button {
+  width: 185px;
+  height: 48px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: #ff5d4f;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.banner__search-block {
+  display: none;
+}
+
+@media (max-width: 1135px) {
+  .banner__main-title {
+    font-size: 30px;
+  }
+
+  .banner__picture {
+    width: 450px;
+    height: 295px;
+  }
+
+  .banner__description-title {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 900px) {
+  .banner {
+    gap: 50px;
+  }
+
+  .banner__picture {
+    width: 350px;
+    height: 239px;
+  }
+}
+
+@media (max-width: 777px) {
+  .banner {
+    padding: 50px 30px;
+    gap: 4px;
+  }
+
+  .banner__picture {
+    display: none;
+  }
+
+  .banner__search-block {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    width: 500px;
+    height: 48px;
+    border: 3px solid #ff5d4f;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+
+  .banner__search-block img {
+    padding-left: 16px;
+  }
+
+  .banner__description-title {
+    display: none;
+  }
+
+  .banner__picture {
+    display: unset;
+    transform: translate(20%, 67%);
+    position: absolute;
+  }
+}
+
+@media (max-width: 518px) {
+  .banner__picture {
+    display: none;
+  }
+
+  .banner {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .banner__main-title {
+    font-size: 21px;
+  }
+
+  .banner__description-title {
+    display: unset;
+  }
+
+  .banner__button {
+    width: 90%;
+    font-size: 15px;
+  }
+
+  .banner div {
+    margin: 0 auto;
+  }
+}
+
+/* Стили для модального окна */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal-content h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.modal-close {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background-color: #0056b3;
+}
