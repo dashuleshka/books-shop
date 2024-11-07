@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+1.1 Название проекта
+Fox Library — это веб-приложение для поиска и просмотра книг, интегрированное с Google Books API.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1.2 Описание
+Приложение позволяет пользователям искать книги по различным фильтрам, таким как название, автор и тема. Оно также отображает результаты в виде карточек с изображениями и информацией о книгах. Веб-приложение включает систему регистрации, входа и отображения списка заказов пользователя.
 
-## Available Scripts
+1.3 Цель проекта
+Проект направлен на создание удобного интерфейса для поиска книг с использованием Google Books API, а также для отображения информации о книгах с возможностью фильтрации по различным категориям.
 
-In the project directory, you can run:
 
-### `npm start`
+2 Функциональные требования
+2.1 Поиск книг
+Пользователь может ввести запрос для поиска книг.
+Поиск происходит по трем категориям: название, автор и тема.
+Результаты поиска отображаются в виде карточек с названием, автором и изображением обложки книги.
+2.2 Регистрация и авторизация
+Пользователи могут создать аккаунт и войти в личный кабинет (без проверок на наличие учетной записи).
+Для авторизации используется модальное окно с информацией о необходимости войти.
+2.3 Просмотр книг
+При клике на карточку книги пользователь перенаправляется на детальную страницу с информацией о книге.
+2.4 Отображение результатов
+При отсутствии результатов поиска отображается сообщение "No books found".
+2.5 Адаптивность
+Веб-приложение должно корректно отображаться на устройствах с разными разрешениями экрана (мобильные, планшеты, десктопы).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3.1 Используемые технологии
+Frontend:
+React (создание компонент)
+CSS (стилизация)
+React Router (маршрутизация)
+Fetch API (для запросов к внешнему API)
+Backend:
+Для данного проекта бэкенд не используется. Все запросы отправляются на сторонний API (Google Books API).
+API:
+Google Books API для поиска и получения данных о книгах.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3.2 Установка и настройка
+3.2.1 Установка зависимостей
+Клонировать репозиторий на локальную машину:
 
-### `npm test`
+bash
+Копировать код
+git clone https://github.com/yourusername/books-shop.git
+Перейти в директорию проекта:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+Копировать код
+cd books-shop
+Установить зависимости с помощью npm:
 
-### `npm run build`
+bash
+Копировать код
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3.2.2 Настройка переменных окружения
+Для работы с API Google необходимо настроить переменную окружения:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Создать файл .env в корне проекта.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Внутри файла .env добавить строку:
+REACT_APP_GOOGLE_API_KEY=your-google-api-key
+Важно: Необходимо заменить your-google-api-key на свой собственный ключ API, который можно получить, зарегистрировавшись в Google Cloud Console.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Запустите приложение локально:
+npm start
