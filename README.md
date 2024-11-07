@@ -63,3 +63,5 @@ REACT_APP_GOOGLE_API_KEY=your-google-api-key
 
 Запустите приложение локально:
 npm start
+
+*не забыть включить VPN
