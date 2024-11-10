@@ -21,6 +21,10 @@ export const Header = () => {
     setIsSignUpOpen(true);
   };
 
+  const handleCloseModalSignUp = () => {
+    setIsSignUpOpen(false);
+  };
+
   return (
     <header>
       <div className="header__logo-search">
@@ -44,10 +48,10 @@ export const Header = () => {
           Sign up
         </a>
       </div>
-      <LogInModal closeModal={handleCloseModalLogIn} isOpen={isLogInOpen} />
+      <LogInModal closeModal={handleCloseModalLogIn} openModal={isLogInOpen} />
       <SignUpModal
-        isModalOpen={isSignUpOpen}
-        setIsModalOpen={setIsSignUpOpen}
+        closeModal={handleCloseModalSignUp}
+        openModal={isSignUpOpen}
       />
     </header>
   );

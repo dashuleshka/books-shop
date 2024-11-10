@@ -2,12 +2,12 @@ import React from "react";
 import "./SignUpModal.css";
 import { useNavigate } from "react-router-dom";
 
-export const SignUpModal = ({ isModalOpen, setIsModalOpen }) => {
+export const SignUpModal = ({ closeModal, openModal }) => {
   const navigate = useNavigate();
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const username = e.target.username.value;
+    const username = e.target.username.value; //извлекаем значения полей формы из события
     const birthdate = e.target.birthdate.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -15,15 +15,10 @@ export const SignUpModal = ({ isModalOpen, setIsModalOpen }) => {
     console.log({ username, birthdate, email, password });
 
     navigate("/profile");
-    setIsModalOpen(false); // Закрываем модальное окно после отправки формы
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false); // Закрываем модальное окно по клику на кнопку "Close"
   };
 
   return (
-    isModalOpen && (
+    openModal && ( //условный рендеринг
       <div id="myModal" className="modal">
         <div className="modal-content">
           <h2>Welcome to Fox Library</h2>
@@ -62,7 +57,7 @@ export const SignUpModal = ({ isModalOpen, setIsModalOpen }) => {
             />
             <button type="submit">Sign up</button>
           </form>
-          <button className="close-button" onClick={handleCloseModal}>
+          <button className="close-button" onClick={closeModal}>
             Close
           </button>
         </div>
