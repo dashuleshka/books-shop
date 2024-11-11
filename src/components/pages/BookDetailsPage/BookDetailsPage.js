@@ -5,17 +5,14 @@ import "./BookDetailsPage.css";
 
 const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
-
 const stripHtmlTags = (html) => {
-  const div = document.createElement("div");
-  div.innerHTML = html;
-  return div.textContent || div.innerText || "";
+  return html.replace(/<[^>]+>/g, "");
 };
 
 export const BookDetailsPage = () => {
-  const { id } = useParams();
-  const [bookDetails, setBookDetails] = useState(null);
-  const { addOrder } = useOrders();
+  const { id } = useParams(); // получение id книги из url
+  const [bookDetails, setBookDetails] = useState(null); // данные о книге
+  const { addOrder } = useOrders(); // позволяет добавлять книгу в заказы
 
   useEffect(() => {
     const fetchBookDetails = async () => {
@@ -33,6 +30,7 @@ export const BookDetailsPage = () => {
     fetchBookDetails();
   }, [id]);
 
+  // проверка состояния загрузки
   if (!bookDetails) {
     return <p>Loading...</p>;
   }

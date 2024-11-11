@@ -20,12 +20,10 @@ const Modal = ({ onClose }) => {
 export const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Функция для открытия модального окна
-  const handleStartClick = () => {
+  const handleOpenModal = () => {
     setIsModalOpen(true);
   };
 
-  // Функция для закрытия модального окна
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
@@ -42,7 +40,7 @@ export const HomePage = () => {
             Over 400.000 books <br /> from fiction to the <br /> business
             literature
           </span>
-          <button className="banner__button" onClick={handleStartClick}>
+          <button className="banner__button" onClick={handleOpenModal}>
             Let's start
           </button>
         </div>

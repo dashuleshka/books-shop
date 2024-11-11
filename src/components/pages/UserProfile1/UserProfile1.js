@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { LogInModal } from "../../LogInModal/LogInModal";
 import "./UserProfile1.css";
 import logo from "../../../assets/images/logo.svg";
 import searchVector from "../../../assets/images/searchVector.svg";
@@ -13,7 +12,6 @@ export const UserProfile1 = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchType, setSearchType] = useState("intitle");
   const [books, setBooks] = useState([]);
-  const [activeTab, setActiveTab] = useState("All books");
   const navigate = useNavigate();
 
   const handleSearchChange = (e) => {
@@ -31,7 +29,6 @@ export const UserProfile1 = () => {
       );
       const data = await response.json();
       setBooks(data.items || []);
-      setActiveTab("All books");
     } catch (error) {
       console.error("Error fetching books:", error);
     }
@@ -74,24 +71,18 @@ export const UserProfile1 = () => {
             </div>
             <div className="account__navigation-buttons">
               <a
-                className={`account-link ${
-                  activeTab === "All books" ? "active" : ""
-                }`}
+                className="account-link"
                 href="#"
                 onClick={() => {
-                  setActiveTab("All books");
                   navigate("/login");
                 }}
               >
                 All books
               </a>
               <a
-                className={`account-link ${
-                  activeTab === "Your orders" ? "active" : ""
-                }`}
+                className="account-link"
                 href="#"
                 onClick={() => {
-                  setActiveTab("Your orders");
                   navigate("/your-orders");
                 }}
               >
@@ -99,7 +90,6 @@ export const UserProfile1 = () => {
               </a>
             </div>
           </header>
-          <LogInModal />
           <div className="search-results">
             {books.length > 0 ? (
               books.map((item) => {
@@ -117,7 +107,7 @@ export const UserProfile1 = () => {
                     style={{ cursor: "pointer" }}
                   >
                     {imageUrl && (
-                      <img src={imageUrl} alt={title} className="book-image" />
+                      <img className="book-image" src={imageUrl} alt={title} />
                     )}
                     <h2 className="book-title">{title}</h2>
                     <p className="book-authors">Authors: {authors}</p>
